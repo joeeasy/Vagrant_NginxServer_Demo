@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <title>Ceaser Cipher</title>
+
+  <!--  Styles  -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+    <div class="container">
+      <div class="cipher-box">
+        <div class="cipher-heading">
+          <h1>Caesar Cipher</h1>
+          <form action="#" id="cipherForm">
+            <div class="form-group">
+              <label for="cipherText" id="cipherLabel">* Cipher</label>
+              <textarea name="" autofocus rows="2" class="form-control " id="cipher-textarea" maxlength="200" placeholder="Sentence or word"
+                title="Maximum of 120 characters"></textarea>
+            </div>
+            <div class="cipher__actions">
+              <div class="encrypt-cipher">
+                <button type="submit" class="btn btn-encrypt-cipher" id="encrypt"> <i class="fa fa-lock" aria-hidden="true"></i>
+ Encrypt Cipher</button>
+              </div>
+              <div class="decrpt-cipher">
+                <button type="submit" class="btn btn-decrypt-cipher" id="decrypt"><i class="fa fa-unlock" aria-hidden="true"></i>
+ Decrypt </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="cipher-content">
+          <p class="text-center" id="js__cipher__content">
+            "Encrypted Text Goes Here"
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/index.js"></script>
+  <script>
+    window.onload = () => {
+      app.ceaserCipher();
+    }
+  </script><i class="fas fa-calendar-alt    "></i>
+</body>
+
+</html>
