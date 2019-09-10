@@ -1,11 +1,11 @@
 # Creating a web server using vagrant and nginx
-------
+
 This Readme contains basic info on how you can create a web server using vagrant while managing your VMs with virtual box. 
 I'll also show you how you could sync files from your host machine to your VM(guest machines).
 
 
 ### Vagrant Nginx server
-------
+
 The steps for setting up a webserver such as nginx on your guest machine are pretty straight forward
 
 ###### Prerequisites 
@@ -49,9 +49,18 @@ This looks more appealing, your configuration show look similar to this. I'm goi
 
 - Run `vagrant up` this will download all the necessary dependencies for your VM to run successfully
 ## Installing Nginx
----
-Now that your ubuntu OS is running, let's install `nginx`. First off, there are two ways we could install nginx, we could just run `vagrant ssh` && `sudo apt update` && `sudo apt install nginx`, but that's defeats the entire idea of automation.
+Now that your ubuntu OS is running, let's install `nginx`. First off, there are two ways we could install nginx
+#### Manual provisioning
+To manually provision your `box`
+- You should start by running`vagrant ssh` this should log you into your guess machine granting you root access so that you don't have to enter a password all the time.
+- Next run `sudo apt update`, this will update your ubuntu binaries.
+- Run `sudo apt install nginx` to install the nginx server.
+- Start the `nginx` server by running `service nginx start`, followed by `service nginx status`. You should get the following message
+  ```vagrant@vagrant-ubuntu-trusty-64:~$ sudo service nginx status
+  * nginx is running
 
+  ```
+####### Or
 
 #### Automating the proccess
 Notice that on the `config.vm.provision` method there's a path to a file name `provision.sh`, this file will contain the commands we'll run once the OS is booted.
