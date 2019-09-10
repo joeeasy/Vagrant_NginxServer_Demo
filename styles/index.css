@@ -1,0 +1,287 @@
+/*  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body default styling */
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #777777;
+  line-height: 1.7;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.margin-right--10 {
+  margin-right: 10px;
+}
+
+.margin-right--5 {
+  margin-right: 5px;
+}
+
+.margin-left--5 {
+  margin-left: 5px;
+}
+
+.margin-left--0 {
+  margin-left: 0;
+}
+
+.padding-left--0 {
+  padding-left: 0;
+}
+
+.margin-left--right__5 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.margin-top--20 {
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  height: inherit;
+  padding: 30;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient( 135deg, #F79533 0%, #F37055 51%, #EF4E7B 100%);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: all 1s ease-out;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cipher-box {
+  height: auto;
+  padding: 60px;
+  width: 50%;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 70px -10px rgba(51, 51, 51, 1);
+  -moz-box-shadow: 0px 0px 70px -10px rgba(51, 51, 51, 1);
+  box-shadow: 0px 0px 70px -10px rgba(51, 51, 51, 1);
+  border-radius: 8px;
+  animation-delay: 0.4s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-out;
+}
+
+#cipherText {
+
+  transition: all .7s ease-out;
+
+}
+textarea {
+    resize: none;
+}
+
+textarea::placeholder {
+  color: lightgrey;
+}
+
+
+
+textarea:invalid {
+  border-bottom-color: red;
+}
+
+
+
+.cipher-box {
+  animation: moveRight 1s;
+}
+
+.cipher-heading h1 {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cipher-content p {
+  font-size: 26px;
+  text-align: center;
+/*   font-style: italic; */
+  font-weight: 700;
+  line-height: 34px;
+  margin-top: 25px;
+  background: linear-gradient( 135deg, #F79533 0%, #F37055 51%, #EF4E7B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 7px 20px;
+  display: inline-block;
+  border-radius: 4px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #777777;
+}
+
+.btn:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-encrypt-cipher, .btn-decrypt-cipher {
+   font-weight: 700;
+}
+
+.btn-encrypt-cipher {
+  background-color: #333333;
+   color: #ffffff;
+ 
+}
+
+.btn-decrypt-cipher {
+  background-image: linear-gradient( 135deg, #F79533 0%, #F37055 51%, #EF4E7B 100%);
+  
+  color: #ffffff;
+}
+
+.btn-decrypt-cipher:after,
+.btn-encrypt-cipher:after {
+  background-color: #333;
+}
+
+.btn:hover:after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.cipher__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#cipherText {
+  word-wrap: break-word;
+}
+
+.form-group {
+  padding-top: 15px;
+}
+
+.form-group>label {
+  font-weight: 600;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 20px;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 2px solid #777777;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type="text"].form-control {
+  padding-top: 10px;
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  80% {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+@media(max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  
+  .cipher-box {
+    width: 70%;
+  }
+}
+
+@media (max-width: 425px) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 5px 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 0 30px;
+  }
+  
+  .cipher-box {
+    padding: 15px;
+    width: 100%;
+  }
+  .cipher-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 320px) {
+  #cipherText {
+    font-size: 14px;
+  }
+}
